@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>XBehave.Core</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Ashish Vegaraju</Authors>
+    <owners>Ashish Vegaraju</owners>
+    <PackageLicenseUrl>https://github.com/avegaraju/Imposter/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/avegaraju/Imposter</PackageProjectUrl>
+    <iconUrl>https://github.com/avegaraju/Imposter/blob/master/logo.png</iconUrl>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <description>A simple and easy way to write behavior driven tests. </description>
+    <PackageReleaseNotes>Package to help write behavioral tests.</PackageReleaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <PackageTags>BDD, Behavior driven development, feature tests, scenario based tests</PackageTags>
+  </PropertyGroup>
+
+</Project>
