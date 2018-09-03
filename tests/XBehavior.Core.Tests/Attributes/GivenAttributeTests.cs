@@ -13,16 +13,24 @@ namespace XBehavior.Core.Tests.Attributes
         [Fact]
         public void GivenAttribute_IsOfTypeFactAttribute()
         {
-            GivenAttribute sut = new GivenAttribute(string.Empty);
+            GivenAttribute sut = new GivenAttribute("test", 1);
             sut.GetType().BaseType.Name.Should().Be(nameof(FactAttribute));
         }
 
         [Fact]
-        public void GivenAttribute_CanAcceptDisplayName()
+        public void GivenAttribute_AllowsToSpecifyOrder()
         {
-            string givenAttributeDescription = "given attribute description.";
-            GivenAttribute sut = new GivenAttribute(givenAttributeDescription);
-            sut.DisplayName.Should().Be(givenAttributeDescription);
+            int expectedOrder = 1;
+            GivenAttribute sut = new GivenAttribute("test", expectedOrder);
+            sut.Order.Should().Be(expectedOrder);
+        }
+
+        [Fact]
+        public void GivenAttribute_SetsCorrectDescriptionAsDisplayName()
+        {
+            string description = "A sample attribute description.";
+            GivenAttribute sut = new GivenAttribute(description, 1);
+            sut.DisplayName.Should().Be($"Given {description}");
         }
 
         [Theory]
@@ -30,7 +38,7 @@ namespace XBehavior.Core.Tests.Attributes
         [InlineData("")]
         public void GivenAttribute_WithDescriptionNameAsIndicated_ThrowsException(string description)
         {
-            Action exceptionThrowingAction = () => new GivenAttribute(description);
+            Action exceptionThrowingAction = () => new GivenAttribute(description, 1);
             exceptionThrowingAction.Should().Throw<ArgumentException>()
                                    .Which.Message.Should().Contain("description is not valid.");
         }
@@ -38,7 +46,7 @@ namespace XBehavior.Core.Tests.Attributes
         [Fact]
         public void GivenAttribute_SkipDescriptionIsAlwaysEmpty()
         {
-            GivenAttribute sut = new GivenAttribute("test");
+            GivenAttribute sut = new GivenAttribute("test", 1);
             sut.Skip.Should().BeEmpty();
         }
     }
