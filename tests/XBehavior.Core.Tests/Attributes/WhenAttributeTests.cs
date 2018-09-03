@@ -11,13 +11,6 @@ namespace XBehavior.Core.Tests.Attributes
     public class WhenAttributeTests
     {
         [Fact]
-        public void WhenAttribute_IsOfTypeFactAttribute()
-        {
-            WhenAttribute sut = new WhenAttribute("test", 1);
-            sut.GetType().BaseType.Name.Should().Be(nameof(FactAttribute));
-        }
-
-        [Fact]
         public void WhenAttribute_AllowsToSpecifyOrderOfExecution()
         {
             int expectedOrder = 1;

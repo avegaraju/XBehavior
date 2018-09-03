@@ -10,12 +10,6 @@ namespace XBehavior.Core.Tests.Attributes
 {
     public class ThenAttributeTests
     {
-        [Fact]
-        public void ThenAttribute_IsOfTypeFactAttribute()
-        {
-            ThenAttribute sut = new ThenAttribute("test", 1);
-            sut.GetType().BaseType.Name.Should().Be(nameof(FactAttribute));
-        }
 
         [Fact]
         public void ThenAttribute_AllowsToSpecifyOrderOfExecution()

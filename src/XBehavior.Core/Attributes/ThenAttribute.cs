@@ -4,20 +4,13 @@ using Xunit;
 
 namespace XBehavior.Core.Attributes
 {
-    public class ThenAttribute: FactAttribute
+    public class ThenAttribute: AttributeBase
     {
-        private readonly string _description;
-        public int Order { get; }
-        public override string DisplayName => $"Then {_description}";
-        public override string Skip => string.Empty;
+        public override string DisplayName => $"Then {Description}";
 
         public ThenAttribute(string description, int order)
+            :base(description, order)
         {
-            if (string.IsNullOrEmpty(description))
-                throw new ArgumentException($"{nameof(description)} is not valid.");
-
-            Order = order;
-            _description = description;
         }
     }
 }

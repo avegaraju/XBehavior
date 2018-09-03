@@ -5,20 +5,13 @@ using Xunit;
 
 namespace XBehavior.Core.Attributes
 {
-    public class GivenAttribute: FactAttribute
+    public class GivenAttribute: AttributeBase
     {
-        private readonly string _description;
-        public int Order { get; }
-        public override string DisplayName => $"Given {_description}";
-        public override string Skip => string.Empty;
+        public override string DisplayName => $"Given {Description}";
 
         public GivenAttribute(string description, int order)
+            :base(description, order)
         {
-            if (string.IsNullOrEmpty(description))
-                throw new ArgumentException($"{nameof(description)} is not valid.");
-
-            Order = order;
-            _description = description;
         }
     }
 }

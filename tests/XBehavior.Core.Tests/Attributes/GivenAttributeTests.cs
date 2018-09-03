@@ -11,13 +11,6 @@ namespace XBehavior.Core.Tests.Attributes
     public class GivenAttributeTests
     {
         [Fact]
-        public void GivenAttribute_IsOfTypeFactAttribute()
-        {
-            GivenAttribute sut = new GivenAttribute("test", 1);
-            sut.GetType().BaseType.Name.Should().Be(nameof(FactAttribute));
-        }
-
-        [Fact]
         public void GivenAttribute_AllowsToSpecifyOrder()
         {
             int expectedOrder = 1;

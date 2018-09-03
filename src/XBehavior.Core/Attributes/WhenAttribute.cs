@@ -4,19 +4,13 @@ using Xunit;
 
 namespace XBehavior.Core.Attributes
 {
-    public class WhenAttribute: FactAttribute
+    public class WhenAttribute: AttributeBase
     {
-        private readonly string _description;
-        public int Order { get; }
-        public override string DisplayName => $"When {_description}";
-        public override string Skip => string.Empty;
+        public override string DisplayName => $"When {Description}";
 
         public WhenAttribute(string description, int order)
+            :base(description, order)
         {
-            if(string.IsNullOrEmpty(description))
-                throw new ArgumentException($"{nameof(description)} is not valid.");
-            Order = order;
-            _description = description;
         }
     }
 }
