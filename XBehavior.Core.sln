@@ -9,7 +9,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{06518B0B-CD0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CC7EC68E-0DB3-4781-B18F-3AE284A16231}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBehavior.Core.Tests", "tests\XBehavior.Core.Tests\XBehavior.Core.Tests.csproj", "{213ECC17-9A17-4B90-A651-FD0C9C87E8F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XBehavior.Core.Tests.Unit", "tests\XBehavior.Core.Tests\XBehavior.Core.Tests.Unit.csproj", "{213ECC17-9A17-4B90-A651-FD0C9C87E8F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{0DD68EFE-5FB8-4E92-89C3-74D97965688C}"
+	ProjectSection(SolutionItems) = preProject
+		build.cake = build.cake
+		Build.ps1 = Build.ps1
+		tools\packages.config = tools\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

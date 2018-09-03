@@ -6,7 +6,7 @@ using XBehavior.Core.Attributes;
 
 using Xunit;
 
-namespace XBehavior.Core.Tests.Attributes
+namespace XBehavior.Core.Tests.Unit.Attributes
 {
     public class ThenAttributeTests
     {
