@@ -16,4 +16,8 @@
     <PackageTags>BDD, Behavior driven development, feature tests, scenario based tests</PackageTags>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.2.0" />
+  </ItemGroup>
+
 </Project>
