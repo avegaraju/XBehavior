@@ -276,7 +276,7 @@ __pycache__/
 
 # Cake - Uncomment if you are using it
 # tools/**
-# !tools/packages.config
+
 
 # Telerik's JustMock configuration file
 *.jmconfig
@@ -288,7 +288,8 @@ __pycache__/
 *.xsd.cs
 
 # Continue Integration files and folders
-tools/
+tools/*
+!tools/packages.config
 build/ 
 
 #ncrunchfiles
