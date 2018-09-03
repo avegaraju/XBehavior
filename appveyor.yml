@@ -1,0 +1,26 @@
+version: 1.0.{build}
+image: Visual Studio 2017 Preview
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+build_script:
+- ps: .\Build.ps1 -target Build+Test+Pack
+test: off
+artifacts:
+- path: artifacts\**\*.nupkg
+  name: NuGet
+deploy:
+- provider: NuGet
+  api_key:
+    secure: Q9SlR4TGweoWs5LBrFVVS1Mnv4yDrwXC/HPswZjjAquvMYgbG85nnmYKPW0K47c0
+  skip_symbols: true
+- provider: NuGet
+  server: https://www.myget.org/F/appify/api/v2/package
+  api_key:
+    secure: VR+RvBNkVQ3rRXXw/rsyH4IRrRQ3bXY24deK2e1z7FGEa/WS5319f4IIW39HeNeT
+  skip_symbols: true
